@@ -77,6 +77,7 @@ A 3-inputs mixer in a very limited space is possible if you left out the per-cha
 
 # External Links
 https://www.instructables.com/DIY-Synth-Modules-a-Modular-Approach-Ep1/
+https://synthbrigade.altervista.org/moduli-modulari-eurorack-compatibili/
 
 # Acknowledgments
 Many thanks to those nice girls and guys at JLCPCB for sponsoring the manufacturing of blocks main PCBs and the two aluminum face-plates pictured in this Instructable.
