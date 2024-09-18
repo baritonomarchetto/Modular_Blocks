@@ -4,7 +4,7 @@ While thinking at the features I wanted for two voltage processing modules and s
 
 So, here is the idea: modular modules!
 
-# Building Blocks
+# Blocks Layout
 Blocks can be divided into 3 main categories:
 - Front blocks
 - Main circuits blocks
@@ -45,7 +45,41 @@ Why an inverting amplifier instead of a "straight" one?? Well, because inverting
 Inverters are devices used to invert (!!) the polaity of an incoming signal. This block is built around a TL072 dual op-amp in inverting configuration (I should stop stating the obvious, isn't it?).
 By usign two of these blocks in a single module you obtain a quad inverter. This block is similar to the "Inverting Amplifier" block, but dubled and with fixed gain.
 
+**DC Offsetter**
+Even if the Eurorack standard calls for signals in the +/-5V range (unbiased), some very important circuit work adeguately ony with biased voltages. In example, CEM3340 PWM input works in the 0-8V range, meaning that an eurorack-compatible LFO would drive it to inaudible levels for half of it's cycle.
+How could we solve? Well, by adding a DC offset voltage to our modulating signal.
+The circuit adopted for this module pushes up or down 4V any input voltage when powering @12V. At knob's half position the offset is zero. Turn left for negative offset. Turn right for positive offset. This kind of circuit could be most often be seen in voltage processor modules.
+The circuit is merely the most basic (inverting) mixer, where an input signal and DC offset voltage are added toghether. The signal is then inverted (again) in order to restore it's original polarity.
 
+**Phase Shifter**
+A phase shifter is used to, you can bet it, shift in phase a waveform. 
+In my modular synth I have four CEM3340 oscillators. Each of them has it's own FM/PWM input. I could send the exact same CV to all of them, but what if I send two (or more) different CVs, phase shifted one to the other? Another application could be the modulation of the two sections of a band pass filter in order to open and close it in a less-predictable way.
 
+**Buffered Multiple**
+Most of the times a passive multiple will work, but what if you want carbon-copies of your voltage sweep?
+The buffered multiple block is built around a TL074 quad op-amp with unity gain. The signal at the input jack is sent 1:1 at the three outputs. By usign two of these blocks in a single module and connecting the output of one semi-module to the input of the other you have a 1 input -> 5 outputs buffered multiple. Cool :)
 
+**Track & Hold**
+Track and holds perform a very special function: they hold an incoming, variable voltage for a brief time when triggered, then let the voltage pass as-is. They are different from Sample & Holds because in these the voltage is hold for higher times and the incoming wave sort of "digitalized".
+The circuit adopted is possibly the simplest you can find online (or very close to it) and it's built around a n-channel JFET (2N5484) in series switch configuration. Two voltage followers increase the block's input capacitance and increase the output current capability of the whole circuit (it also makes a good reverse connection protection).
+
+**White Noise Generator**
+A white noise generator is mandatory to synthesize special effects (wind), give rattle to a snare or breath to a pad.
+The white noise generator is based on a simple design takeing advantage from the natural occurring PNP semiconductor junction thermal noise. The "barebone" noise is amplified by a dual inverting amplification stage. The first amp stage is a straight 5X amplfication to give the small noise signal (100-300 mV depending on the transistor) a boost. The second amplification stage has variable, user definable gain through a potentiometer.
+
+**LED Voltage Monitor(polarity indicator)**
+A nice addition to modules are LED-based indicators. An example? Do you remember the DC offsetter block from the previous blocks set? We can now realize a DC offsetter module with polarity indicator. What about attenuators? You can now have a visual indication of how much attenuation you are applying to your signal.
+This block main components are a couple of operational amplifiers and two LEDs. Nothing more.
+The polarity indicator main circuit block was not compatible with existing front blocks, so I layed down a dedicated one. I made it compatible with "4 jacks" front panels, with LEDs aligned to the two middle holes.
+
+**Non-Attenuated, Fixed Gain Mixer**
+A 3-inputs mixer in a very limited space is possible if you left out the per-channel attenuation stage and set a fixed gain. This block adds up to three signals to a single output with fixed gain.
+
+# External Links
 https://www.instructables.com/DIY-Synth-Modules-a-Modular-Approach-Ep1/
+
+# Acknowledgments
+Many thanks to those nice girls and guys at JLCPCB for sponsoring the manufacturing of blocks main PCBs and the two aluminum face-plates pictured in this Instructable.
+The sponsorship made possible to turn "modular modularity" from the status of "idea" into reality in first place, then make it even more interesting with the addition of new circuit blocks.
+JLCPCB is a high-tech manufacturer specialized in the production of high-reliable and cost-effective PCBs. They offer a flexible PCB assembly service with a huge library of more than 350.000 components in stock.
+3D printing is part of their portfolio of services so one could create a full finished product, all in one place!
