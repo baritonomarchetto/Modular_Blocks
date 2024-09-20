@@ -77,9 +77,11 @@ A 3-inputs mixer in a very limited space is possible if you left out the per-cha
 
 # External Links
 https://www.instructables.com/DIY-Synth-Modules-a-Modular-Approach-Ep1/
+
 https://www.instructables.com/DIY-Synth-Modules-a-Modular-Approach-Ep2/
 
 https://synthbrigade.altervista.org/moduli-modulari-eurorack-compatibili/
+
 https://synthbrigade.altervista.org/moduli-modulari-episodio-secondo/
 
 # Acknowledgments
