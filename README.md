@@ -113,5 +113,5 @@ Many thanks to those nice girls and guys at JLCPCB for sponsoring the manufactur
 
 The sponsorship made possible to turn "modular modularity" from the status of "idea" into reality in first place, then make it even more interesting with the addition of new circuit blocks.
 
-JLCPCB is a high-tech manufacturer specialized in the production of high-reliable and cost-effective PCBs. They offer a flexible PCB assembly service with a huge library of more than 350.000 components in stock.
+JLCPCB is a high-tech manufacturer specialized in the production of high-reliable and cost-effective PCBs. They offer a flexible PCB assembly service with a huge library of more than 400.000 components in stock.
 3D printing is part of their portfolio of services so one could create a full finished product, all in one place!
